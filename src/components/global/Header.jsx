@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
+import { MdCancel } from "react-icons/md";
+import EnquiryCard from "../cards/EnquiryCard";
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -77,7 +79,7 @@ const Header = () => {
         {/* Desktop Buttons */}
         <div className="hidden lg:flex lg:gap-5">
           <button
-            onClick={toggleBookingModal}
+            onClick={openModal}
             className="bg-defined-orange hover:bg-defined-blue text-white py-2 px-8 rounded-md transition-all duration-700 font-semibold hover:cursor-pointer"
           >
             Get Estimate
@@ -135,17 +137,6 @@ const Header = () => {
           )}
         </div>
       </div>
-
-      {isModalOpen && (
-        <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black bg-opacity-50">
-          <div
-            ref={modalRef}
-            className="w-full sm:w-[90%] md:w-[50%] max-w-md p-6 rounded-lg relative "
-          >
-            {/* <TradeFormCard closeModal={closeModal} /> */}
-          </div>
-        </div>
-      )}
     </header>
   );
 };
