@@ -40,28 +40,38 @@ const EnquirySection = () => {
         </h1>
         <div className="flex gap-4 flex-col-reverse md:flex-row">
           <div className="w-full md:w-1/2">
-            <form className="flex flex-col justify-center w-full h-full" onSubmit={handleFormSubmit}>
+            <form
+              className="flex flex-col justify-center w-full h-full"
+              onSubmit={handleFormSubmit}
+            >
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="flex flex-col gap-8 w-full">
                   <input
                     type="text"
                     placeholder="Name"
                     name="name"
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     className="p-4 rounded-lg opacity-80 w-full"
                   />
                   <input
                     type="number"
                     placeholder="Mobile Number(10-digit)"
                     name="mobile"
-                    onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, mobile: e.target.value })
+                    }
                     className="p-4 rounded-lg opacity-80 w-full"
                   />
                 </div>
                 <div className="flex flex-col gap-8 w-full">
-                  <select className="p-4 rounded-lg opacity-80 w-full"
-                  name="service"
-                  onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                  <select
+                    className="p-4 rounded-lg opacity-80 w-full"
+                    name="service"
+                    onChange={(e) =>
+                      setFormData({ ...formData, service: e.target.value })
+                    }
                   >
                     <option value="" disabled selected>
                       Select Services
@@ -85,6 +95,13 @@ const EnquirySection = () => {
                     <option value="Car Washing">Car Washing</option>
                     <option value="Car Detailing">Car Detailing</option>
                     <option value="Car Wearing ">Car Wearing</option>
+                    <option value="Car Wax Polish">Car Wax Polish</option>
+                    <option value="Teflon Polish">Teflon Polish</option>
+                    <option value="Key Repair">Key Repair</option>
+                    <option value="Meter Repair">Meter Repair</option>
+                    <option value="Car Antirust Coating">
+                      Car Antirust Coating
+                    </option>
                   </select>
 
                   <button

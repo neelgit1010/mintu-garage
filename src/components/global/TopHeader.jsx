@@ -10,7 +10,8 @@ const TopHeader = () => {
         <div className="flex gap-4 w-full  sm:rounded-br-0 md:rounded-br-[4rem]  sm:px-4 md:px-6 sm:text-xs lg:text-sm xlg:text-base">
           <div className="flex md:gap-2 sm:gap-1 items-center sm:text-[10px] lg:text-sm xlg:text-base font-medium">
             <BiSolidPhoneCall size={20} className="text-defined-orange" />
-            <Link href="tel:+919563211411">+91 9563 211411</Link>{" "}
+            <Link href="tel:+919563211411">+91 9563 211411</Link>{","}
+            <Link href="tel:+918637897776">+91 8637897776</Link>{" "}
             <FaWhatsapp size={20} className="text-defined-orange" />
             <span className="text-white">+91 9563 211411</span>{" "}
           </div>
@@ -19,8 +20,9 @@ const TopHeader = () => {
           <div className="flex items-center gap-4">
             <a target="_blank" href={"https://g.co/kgs/ftVFsS7"}>
               <FaGoogle size={20} className="text-white" />
-            </a >
-            <a target="_blank"
+            </a>
+            <a
+              target="_blank"
               href={"https://www.facebook.com/profile.php?id=61560013924689"}
             >
               <FaFacebook size={20} className="text-white" />
