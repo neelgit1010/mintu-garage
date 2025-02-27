@@ -28,10 +28,25 @@ const EnquirySection = () => {
                     <option value="" disabled selected>
                       Select Services
                     </option>
-                    <option value="Service 1">Service 1</option>
-                    <option value="Service 2">Service 2</option>
-                    <option value="Service 3">Service 3</option>
-                    <option value="Service 4">Service 4</option>
+                    <option value="Car Servicing ">Car Servicing</option>
+                    <option value="Car Repair">Car Repair</option>
+                    <option value="Car Engine Repair">Car Engine Repair</option>
+                    <option value="Suspension Repairing">
+                      Suspension Repairing
+                    </option>
+                    <option value="Gear Box Repairing">
+                      Gear Box Repairing
+                    </option>
+                    <option value="Car AC Repairing"> Car AC Repairing</option>
+                    <option value="Denting Painting">Denting Painting</option>
+                    <option value="Car Computer Checkup">
+                      Car Computer Checkup
+                    </option>
+                    <option value="Car Diagnosis">Car Diagnosis</option>
+                    <option value="Car Scanning">Car Scanning</option>
+                    <option value="Car Washing">Car Washing</option>
+                    <option value="Car Detailing">Car Detailing</option>
+                    <option value="Car Wearing ">Car Wearing</option>
                   </select>
 
                   <button

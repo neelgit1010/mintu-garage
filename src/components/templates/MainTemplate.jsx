@@ -1,6 +1,7 @@
 import Header from "@/components/global/Header";
 import Footer from "@/components/global/Footer";
 import TopHeader from "@/components/global/TopHeader";
+import OnlyMobile from "./OnlyMobile";
 
 const MainTemplate = ({ children }) => {
   return (
@@ -13,6 +14,7 @@ const MainTemplate = ({ children }) => {
       {/* Main Content */}
       <div className=" lg:mt-[5rem] md:mt-[5rem] mt-[4rem]"> {children}</div>
 
+        <OnlyMobile />
       <Footer />
     </div>
   );

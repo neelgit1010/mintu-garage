@@ -8,9 +8,7 @@ import { IoClose } from "react-icons/io5";
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const modalRef = useRef(null);
-
+  const [modalOpen, setModalOpen] = useState(false);
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
@@ -22,16 +20,13 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
-   const toggleBookingModal = () => {
-     setIsModalOpen((prev) => !prev);
-     console.log("Toggle Modal Clicked: ", !isModalOpen);
-   };
+    const openModal = () => {
+      setModalOpen(true);
+    };
 
-   const closeModal = useCallback(() => {
-     console.log("closeModal function triggered");
-     setIsModalOpen(false);
-   }, []);
-
+    const closeModal = () => {
+      setModalOpen(false);
+    };
     useEffect(() => {
       let ticking = false;
       const handleScroll = () => {
@@ -46,21 +41,6 @@ const Header = () => {
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-
-   useEffect(() => {
-     const handleClickOutside = (event) => {
-       if (modalRef.current && !modalRef.current.contains(event.target)) {
-         closeModal();
-       }
-     };
-
-     if (isModalOpen) {
-       document.addEventListener("mousedown", handleClickOutside);
-     }
-     return () => {
-       document.removeEventListener("mousedown", handleClickOutside);
-     };
-   }, [isModalOpen, closeModal]);
 
   return (
     <header>
@@ -132,17 +112,36 @@ const Header = () => {
           ))}
 
           <button
-            onClick={toggleBookingModal}
+            onClick={openModal}
             className="bg-defined-orange text-white py-2 px-8 rounded-full w-full transition-all duration-300 font-semibold hover:bg-gray-800"
           >
             Get Estimate
           </button>
+          {modalOpen && (
+            <div className="fixed top-0 z-[1300] left-0 w-full h-full flex items-center justify-center overflow-y-scroll bg-black bg-opacity-50">
+              <div className=" w-full sm:h-[50vh] lg:h-[100vh] justify-center items-center flex flex-col  rounded-lg bg-white">
+                <div className="w-full flex p-4 justify-end items-center relative">
+                  <MdCancel
+                    size={30}
+                    onClick={closeModal}
+                    className="lg:text-2xl sm:text-xl absolute z-[1400] top-0 lg:h-10 right-6 text-defined-orange"
+                  />
+                </div>
+                <div className=" w-[95%] md:w-[60%] lg:w-[45%] xl:w-[40%] xxl:w-[30%] z-[1300] relative">
+                  <EnquiryCard />
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
-       {isModalOpen && (
+      {isModalOpen && (
         <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black bg-opacity-50">
-          <div ref={modalRef} className="w-full sm:w-[90%] md:w-[50%] max-w-md p-6 rounded-lg relative ">
+          <div
+            ref={modalRef}
+            className="w-full sm:w-[90%] md:w-[50%] max-w-md p-6 rounded-lg relative "
+          >
             {/* <TradeFormCard closeModal={closeModal} /> */}
           </div>
         </div>
