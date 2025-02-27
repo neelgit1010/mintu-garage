@@ -22,7 +22,7 @@ const ServiceCard = ({img, title, desc}) => {
           alt="1"
           width={500}
           height={500}
-          className="w-full h-[25rem] object-cover rounded-lg"
+          className="w-full h-[18rem] object-cover rounded-lg"
         />
       </div>
       <h1 className="text-defined-orange  text-center text-2xl font-semibold">
