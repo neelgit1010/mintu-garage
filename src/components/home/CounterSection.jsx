@@ -8,30 +8,16 @@ const CounterSection = () => {
       title: "Satisfied Customer",
       icon: "/home/person_play.png",
     },
-    {
-      number: 100,
-      title: "Services",
-      icon: "/home/family_star.png",
-    },
-    {
-      number: 20,
-      title: "Experienced",
-      icon: "/home/group.png",
-    },
-    {
-      number: 4,
-      title: "Rating on Google",
-      icon: "/home/handshake.png",
-    },
+    { number: 100, title: "Services", icon: "/home/family_star.png" },
+    { number: 20, title: "Experienced", icon: "/home/group.png" },
+    { number: 4, title: "Rating on Google", icon: "/home/handshake.png" },
   ];
 
-    const { ref, inView } = useInView({
-      triggerOnce: true,
-      threshold: 0.5,
-    });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
+
   return (
     <section ref={ref}>
-      <div className="flex gap-4 flex-col md:flex-row justify-around items-center p-8">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-6 p-8 w-full">
         {cards.map((card, index) => (
           <CounterCard
             key={index}
