@@ -2,6 +2,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MdFileDownloadDone } from "react-icons/md";
 import useElementHeight from "@/hooks/useElementHeight";
+import { useInView } from "react-intersection-observer";
+import CountUp from "react-countup";
 const AboutSection = () => {
   const content = [
     {
@@ -18,6 +20,7 @@ const AboutSection = () => {
     },
   ];
   const [rightSideHeight, leftSideRef] = useElementHeight();
+    const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -60,8 +63,13 @@ const AboutSection = () => {
                 className="w-full h-full object-cover rounded-lg"
               />
             </div>
-            <div className="flex flex-col h-1/4 justify-center items-center bg-defined-orange rounded-lg text-white">
-              <h1 className="text-3xl font-semibold">09+</h1>
+            <div
+              ref={ref}
+              className="flex flex-col h-1/4 justify-center items-center bg-defined-orange rounded-lg text-white"
+            >
+              <h1 className="text-3xl font-semibold">
+                0{inView ? <CountUp end={9} duration={2} /> : 0}+
+              </h1>
               <p className="text-sm">Years of Experience</p>
             </div>
           </div>
