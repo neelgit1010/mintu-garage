@@ -1,6 +1,37 @@
 import Image from "next/image";
+import { useState } from "react";
 
 const EnquirySection = () => {
+
+    const [formData, setFormData] = useState({});
+   const handleFormSubmit = (e) => {
+     e.preventDefault();
+
+     if (!formData.name || !formData.mobile || !formData.service) {
+       alert("Please fill all the fields");
+       return;
+     }
+
+     if (formData.mobile.length !== 10) {
+       alert("Please enter a valid mobile number");
+       return;
+     }
+
+     const dest = "+919563211411";
+     let message = `*Name:* ${formData.name}
+  *Phone:* ${formData.mobile}
+  *Service needed:* ${formData.service}
+  `;
+     message = encodeURIComponent(message);
+     // Check if user is on mobile
+     const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
+     const baseUrl = isMobile
+       ? "https://api.whatsapp.com/send"
+       : "https://web.whatsapp.com/send";
+
+     const url = `${baseUrl}?phone=${dest}&text=${message}`;
+     window.open(url, "_blank").focus();
+   };
   return (
     <section className="p-8">
       <div className="flex flex-col rounded-lg bg-defined-white p-6 gap-4 text-center md:text-left">
@@ -9,22 +40,29 @@ const EnquirySection = () => {
         </h1>
         <div className="flex gap-4 flex-col-reverse md:flex-row">
           <div className="w-full md:w-1/2">
-            <form className="flex flex-col justify-center w-full h-full">
+            <form className="flex flex-col justify-center w-full h-full" onSubmit={handleFormSubmit}>
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="flex flex-col gap-8 w-full">
                   <input
                     type="text"
                     placeholder="Name"
+                    name="name"
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="p-4 rounded-lg opacity-80 w-full"
                   />
                   <input
                     type="number"
                     placeholder="Mobile Number(10-digit)"
+                    name="mobile"
+                    onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
                     className="p-4 rounded-lg opacity-80 w-full"
                   />
                 </div>
                 <div className="flex flex-col gap-8 w-full">
-                  <select className="p-4 rounded-lg opacity-80 w-full">
+                  <select className="p-4 rounded-lg opacity-80 w-full"
+                  name="service"
+                  onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                  >
                     <option value="" disabled selected>
                       Select Services
                     </option>

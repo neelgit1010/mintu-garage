@@ -50,7 +50,7 @@ const OnlyMobile = () => {
       >
         <Link
           target="_Blank"
-          href="https://api.whatsapp.com/send?phone=918822728674"
+          href="https://wa.me/919563211411"
           className="flex flex-col items-center gap-2 text-sm text-site-typo-secondary font-semibold"
         >
           <span className="text-xl">
@@ -76,7 +76,7 @@ const OnlyMobile = () => {
           <span className="relative top-8">Request Quote</span>
         </button>
         <Link
-          href="tel:+918822728674"
+          href="tel:+919563211411"
           target="_Blank"
           className="flex flex-col gap-2 items-center text-sm text-site-typo-secondary font-semibold"
         >
@@ -94,7 +94,7 @@ const OnlyMobile = () => {
           <div className=" w-full sm:h-[50vh] lg:h-[100vh] justify-center items-center flex flex-col  rounded-lg bg-white">
             <div className="w-full flex p-4 justify-end items-center relative">
               <MdCancel
-              size={30}
+                size={30}
                 onClick={closeModal}
                 className="lg:text-2xl sm:text-xl absolute z-[1400] top-0 lg:h-10 right-6 text-defined-orange"
               />

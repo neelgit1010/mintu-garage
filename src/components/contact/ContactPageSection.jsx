@@ -11,34 +11,44 @@ const ContactPageSection = () => {
       {
         icon: <FaWhatsapp size={20} className="text-defined-orange" />,
         text: "+91 9563 211411",
+        link: /iPhone|Android|iPad|iPod/i.test(navigator.userAgent)
+          ? "https://wa.me/919563211411"
+          : "https://web.whatsapp.com/send?phone=919563211411",
       },
       {
         icon: <BiSolidPhoneCall size={20} className="text-defined-orange" />,
         text: "+91 9563 211411",
+        link: "tel:+919563211411",
       },
       {
         icon: <MdEmail size={20} className="text-defined-orange" />,
         text: "mintugarage@gmail.com",
+        link: "mailto:mintugarage@gmail.com",
       },
       {
         icon: <FaLocationDot size={40} className="text-defined-orange" />,
         text: "NH-31, Bypass Road, Beside City Hospital, Prakash Nagar, Near Gandhi Maidan, Ward No. 43, Siliguri, WB - 734003",
+        link: null,
       },
       {
         icon: <FaGoogle size={20} className="text-defined-orange" />,
         text: "Mintu Garage On Google",
+        link: "https://g.co/kgs/ftVFsS7",
       },
       {
         icon: <AiFillInstagram size={20} className="text-defined-orange" />,
         text: "Mintu Garage On Instagram",
+        link: "https://www.instagram.com/mintugarage",
       },
       {
         icon: <FaFacebook size={20} className="text-defined-orange" />,
         text: "Mintu Garage On Facebook",
+        link: "https://www.facebook.com/profile.php?id=61560013924689",
       },
       {
         icon: <FaYoutube size={20} className="text-defined-orange" />,
         text: "Mintu Garage On Youtube",
+        link: "https://www.youtube.com/@mintugarage",
       },
     ];
     const [rightSideHeight, leftSideRef] = useElementHeight();
@@ -85,7 +95,9 @@ const ContactPageSection = () => {
                   key={index}
                 >
                   {content.icon}
-                  <p>{content.text}</p>
+                  <a href={content.link !== null ? content.link : "/"} target="_blank">
+                    <p>{content.text}</p>
+                  </a>
                 </div>
               ))}
             </div>
@@ -99,7 +111,9 @@ const ContactPageSection = () => {
                   key={index}
                 >
                   {content.icon}
-                  <p>{content.text}</p>
+                  <a href={content.link} target="_blank">
+                    <p>{content.text}</p>
+                  </a>
                 </div>
               ))}
             </div>
@@ -118,9 +132,9 @@ const ContactPageSection = () => {
             width="600"
             height="450"
             style={{ border: 0 }}
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
       </div>

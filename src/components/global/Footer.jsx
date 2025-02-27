@@ -125,7 +125,7 @@ const Footer = () => {
                     "Best Car Garage In Siliguri",
                   ].map((item, index) => (
                     <li key={index} className="py-2 hover:underline">
-                      <Link href="/rooms">
+                      <Link href="/services">
                         {">"}
                         {item}
                       </Link>
@@ -134,7 +134,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            {/* Right Section (Image Fix) */}
+            {/* Right Section */}
             <div className="w-full lg:w-[30%]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3177.98614385948!2d88.4269478748217!3d26.742589067381957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e441c21a11e2cf%3A0xbda529d96d4997dc!2sMINTU%20GARAGE!5e1!3m2!1sen!2sin!4v1740579031453!5m2!1sen!2sin"
