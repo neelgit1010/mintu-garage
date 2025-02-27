@@ -1,7 +1,7 @@
 import Image from "next/image";
 import CountUp from "react-countup";
 
-const CounterCard = ({ title, icon, number, suffix, inView }) => {
+const CounterCard = ({ title, icon, number, inView }) => {
   return (
     <div className="flex gap-4">
       <div className="w-[4rem] h-[4rem] rounded-2xl bg-defined-orange flex justify-center items-center p-4">
@@ -15,7 +15,7 @@ const CounterCard = ({ title, icon, number, suffix, inView }) => {
       </div>
       <div>
         <h1 className="text-3xl font-semibold text-defined-blue">
-          {inView ? <CountUp end={number} duration={2} /> : 0}{suffix}
+          {inView ? <CountUp end={number} duration={2} /> : 0}+
         </h1>
         <p className="text-sm text-defined-brown">{title}</p>
       </div>

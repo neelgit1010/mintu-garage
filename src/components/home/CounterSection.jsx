@@ -4,28 +4,24 @@ import CounterCard from "../cards/CounterCard";
 const CounterSection = () => {
   const cards = [
     {
-      number: 100,
+      number: 10000,
       title: "Satisfied Customer",
       icon: "/home/person_play.png",
-      suffix: "%"
     },
     {
-      number: 1500,
-      title: "Happy Customer",
+      number: 100,
+      title: "Services",
       icon: "/home/family_star.png",
-      suffix: "+"
     },
     {
-      number: 10,
-      title: "Professional Team",
+      number: 20,
+      title: "Experienced",
       icon: "/home/group.png",
-      suffix: "+"
     },
     {
-      number: 12,
-      title: "Corporate Partner",
+      number: 4,
+      title: "Rating on Google",
       icon: "/home/handshake.png",
-      suffix: "+"
     },
   ];
 
@@ -42,7 +38,6 @@ const CounterSection = () => {
             icon={card.icon}
             title={card.title}
             number={card.number}
-            suffix={card.suffix}
             inView={inView}
           />
         ))}
