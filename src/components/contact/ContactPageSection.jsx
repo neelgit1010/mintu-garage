@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useElementHeight from "@/hooks/useElementHeight";
 import { AiFillInstagram } from "react-icons/ai";
+import { LuAlarmClock } from "react-icons/lu";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { FaFacebook, FaGoogle, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
@@ -36,14 +37,14 @@ const ContactPageSection = () => {
         link: "https://g.co/kgs/ftVFsS7",
       },
       {
-        icon: <AiFillInstagram size={20} className="text-defined-orange" />,
-        text: "Mintu Garage On Instagram",
-        link: "https://www.instagram.com/mintugarage",
-      },
-      {
         icon: <FaFacebook size={20} className="text-defined-orange" />,
         text: "Mintu Garage On Facebook",
         link: "https://www.facebook.com/profile.php?id=61560013924689",
+      },
+      {
+        icon: <AiFillInstagram size={20} className="text-defined-orange" />,
+        text: "Mintu Garage On Instagram",
+        link: "https://www.instagram.com/mintugarage",
       },
       {
         icon: <FaYoutube size={20} className="text-defined-orange" />,
@@ -95,7 +96,10 @@ const ContactPageSection = () => {
                   key={index}
                 >
                   {content.icon}
-                  <a href={content.link !== null ? content.link : "/"} target="_blank">
+                  <a
+                    href={content.link !== null ? content.link : "/"}
+                    target="_blank"
+                  >
                     <p>{content.text}</p>
                   </a>
                 </div>
@@ -105,17 +109,24 @@ const ContactPageSection = () => {
               <h1 className="text-defined-blue text-xl font-bold">
                 Follow With Us
               </h1>
-              {contents.slice(4, 8).map((content, index) => (
-                <div
-                  className="flex md:flex-row gap-4 items-center text-defined-brown"
-                  key={index}
-                >
-                  {content.icon}
-                  <a href={content.link} target="_blank">
-                    <p>{content.text}</p>
+              <div className="flex gap-4 items-center text-defined-orange">
+                {contents.slice(4, 8).map((content, index) => (
+                  <a key={index} href={content.link} target="_blank">
+                    {content.icon}
                   </a>
-                </div>
-              ))}
+                ))}
+              </div>
+              <h1 className="text-defined-blue text-xl font-bold">
+                Garage opening Time
+              </h1>
+              <div className="flex items-center gap-3">
+                <LuAlarmClock size={25} className="text-defined-orange" />
+                <span className="text-defined-brown">Opening Time 10:00 am</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <LuAlarmClock size={25} className="text-defined-orange" />
+                <span className="text-defined-brown">Closing Time 08:00 pm</span>
+              </div>
             </div>
           </div>
         </div>

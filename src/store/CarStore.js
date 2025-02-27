@@ -30,12 +30,12 @@ export const CarProvider = ({ children }) => {
       desc: "Repairing manual and automatic gearboxes for seamless gear shifting and optimal vehicle performance.",
     },
     {
-      img: "/services/CarACRepairing.jpg",
+      img: "/services/acrepair.jpg",
       title: "Car AC Repairing",
       desc: "Fixing air conditioning systems to ensure effective cooling and comfortable driving in all weather conditions.",
     },
     {
-      img: "/services/DentingPainting.jpg",
+      img: "/services/denting.png",
       title: "Denting Painting",
       desc: "Comprehensive maintenance to ensure your vehicle runs smoothly, enhancing performance, efficiency, and overall lifespan.",
     },
@@ -46,7 +46,7 @@ export const CarProvider = ({ children }) => {
     },
     {
       img: "/services/CarDiagnosis.jpg",
-      title: "Car Scanning",
+      title: "Car Diagonosis",
       desc: "Our expert technicians accurately diagnose mechanical, electrical, and performance issues, ensuring efficient repairs and improved vehicle reliability.",
     },
     {
@@ -65,9 +65,34 @@ export const CarProvider = ({ children }) => {
       desc: "We provide meticulous interior and exterior detailing, restoring your vehicle’s appearance, enhancing shine, and preserving its long-lasting beauty.",
     },
     {
-      img: "/services/CarWearing.jpg",
-      title: "Car Wearing",
+      img: "/services/CarWiring.jpg",
+      title: "Car wiring",
       desc: "Our skilled team handles all types of car wiring, ensuring secure connections, optimal functionality, and reliable performance of electrical components.",
+    },
+    {
+      img: "/services/CarWaxPolish.jpg",
+      title: "Car Wax Polish",
+      desc: "Enhance your car’s shine and protect its paint with our high-quality wax polish for a glossy and long-lasting finish.",
+    },
+    {
+      img: "/services/TeflonPolish.jpg",
+      title: "Teflon Polish",
+      desc: "Shield your car’s exterior with Teflon coating, preventing scratches and enhancing durability while giving it a showroom-like glossy appearance.",
+    },
+    {
+      img: "/services/keyrepair.jpg",
+      title: "Key Repair",
+      desc: "Get quick and efficient car key repairs, including broken keys, remote issues, and reprogramming for smooth and hassle-free access.",
+    },
+    {
+      img: "/services/meterrepair.jpg",
+      title: "Meter Repair",
+      desc: "We specialize in repairing faulty car meters, including speedometers and fuel gauges, ensuring accurate readings for a safer driving experience.",
+    },
+    {
+      img: "/services/CarAntiRustCoating.jpg",
+      title: "Car Anti Rust Coating",
+      desc: "Protect your vehicle’s underbody and metal components from rust and corrosion with our premium anti-rust coating for long-lasting durability.",
     },
   ];
   return <CarContext.Provider value={{ cars }}>

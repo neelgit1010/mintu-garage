@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import { FaShop, FaShopSlash } from "react-icons/fa6";
 import { FaFacebook, FaGoogle, FaMobile, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoLocationSharp } from "react-icons/io5";
@@ -85,14 +84,6 @@ const Footer = () => {
                 <div className="flex items-center gap-2">
                   <MdEmail />
                   <span>mintugarage@gmail.com</span>
-                </div>
-                <div className="flex gap-2 w-full xl:w-[80%]">
-                  <FaShop size={20} />
-                  <span>Opens at 10:00AM</span>
-                </div>
-                <div className="flex gap-2 w-full xl:w-[80%]">
-                  <FaShopSlash size={20} />
-                  <span>Closes at 08:00PM</span>
                 </div>
                 <div className="flex gap-2 w-full xl:w-[80%]">
                   <IoLocationSharp size={30} />
