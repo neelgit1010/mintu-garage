@@ -5,11 +5,11 @@ const CounterCard = ({ title, icon, number, inView, index }) => {
   return (
     <div
       className={`flex flex-col md:flex-row items-center text-center md:text-left gap-2 md:gap-4 w-full 
-      transform transition-all duration-700 ease-out
+      transform transition-all duration-1000 ease-out
       ${
         inView ? "translate-x-0 opacity-100" : "translate-x-[-50px] opacity-0"
       }`}
-      style={{ transitionDelay: `${index * 500}ms` }} // Each card appears 500ms after the previous one
+      style={{ transitionDelay: `${index * 2000}ms` }} // Each card appears 500ms after the previous one
     >
       {/* Icon */}
       <div className="w-[4rem] h-[4rem] rounded-2xl bg-defined-orange flex justify-center items-center p-2">
