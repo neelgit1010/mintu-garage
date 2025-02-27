@@ -55,7 +55,7 @@ const OnlyMobile = () => {
         >
           <span className="text-xl">
             <TbBrandWhatsappFilled
-              size={30}
+              size={20}
               className="text-site-primary text-defined-orange"
             />
           </span>
@@ -68,7 +68,7 @@ const OnlyMobile = () => {
           <span className="absolute -top-7 bg-white w-[4rem] h-[4rem] border-t-[1px] border-site-main rounded-full justify-center items-center flex">
             <span className="flex w-[3rem] h-[3rem] text-xl bg-white rounded-full justify-center items-center">
               <HiOutlineCurrencyRupee
-                size={40}
+                size={30}
                 className="text-site-primary text-defined-orange"
               />
             </span>
@@ -82,7 +82,7 @@ const OnlyMobile = () => {
         >
           <span className="text-xl">
             <FaPhone
-              size={30}
+              size={20}
               className="text-site-primary text-defined-orange"
             />
           </span>

@@ -1,7 +1,17 @@
-import Image from "next/image"
 import { useRouter } from "next/router";
+import { useEffect, useRef } from "react";
 
 const Banner = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current
+        .play()
+        .catch((error) => console.log("Autoplay blocked:", error));
+    }
+  }, []);
+
     const router = useRouter();
       const pageData = {
         "/contact": { title: "Contact Us" },
@@ -12,14 +22,18 @@ const Banner = () => {
     const {title} = pageData[router.pathname] || { title: "" };
 
   return (
-    <div className="w-full h-[30vh] relative">
-      <Image
-        src={"/images/sub-banner.png"}
-        alt="product form"
-        width={500}
-        height={500}
-        className="w-full h-full object-cover"
-      />
+    <div className="w-full h-auto relative">
+      <video
+        ref={videoRef}
+        width="320"
+        height="240"
+        loop
+        autoPlay
+        muted
+        className="w-full h-auto"
+      >
+        <source src="/videos/subheader.mp4" type="video/mp4" />
+      </video>
 
       <div className="absolute inset-0 bg-black opacity-30"></div>
 

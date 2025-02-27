@@ -11,7 +11,7 @@ const BookAppointmentSection = () => {
 
   return (
     <section>
-      <div className="w-full h-[50rem] md:h-[20rem] relative">
+      <div className="w-full h-[24rem] md:h-[15rem] relative">
         <Image
           src={"/images/footer.jpg"}
           alt="footer"
@@ -20,7 +20,7 @@ const BookAppointmentSection = () => {
           className="w-full h-full object-cover"
         />
 
-        <div className="absolute inset-0 w-full h-auto flex flex-col justify-center items-center p-24 text-white gap-4">
+        <div className="absolute inset-0 w-full h-auto flex flex-col justify-center items-center p-1 md:p-20 text-white gap-4">
           <h1 className="text-3xl font-bold text-center">
             Schedule Your Appointment Today
           </h1>
