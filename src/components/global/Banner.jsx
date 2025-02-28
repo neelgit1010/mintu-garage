@@ -22,7 +22,7 @@ const Banner = () => {
     const {title} = pageData[router.pathname] || { title: "" };
 
   return (
-    <div className="w-full h-auto relative">
+    <div className="w-full h-full relative">
       <video
         ref={videoRef}
         width="320"
@@ -30,7 +30,7 @@ const Banner = () => {
         loop
         autoPlay
         muted
-        className="w-full h-auto"
+        className="w-full h-full"
       >
         <source src="/videos/subheader.mp4" type="video/mp4" />
       </video>
@@ -38,7 +38,7 @@ const Banner = () => {
       <div className="absolute inset-0 bg-black opacity-30"></div>
 
       <div className="absolute inset-0 flex justify-center items-center flex-col text-white z-10">
-        <h1 className="text-4xl font-semibold">{title}</h1>
+        <h1 className="text-base md:text-4xl font-semibold">{title}</h1>
       </div>
     </div>
   );
