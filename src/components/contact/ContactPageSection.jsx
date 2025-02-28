@@ -12,7 +12,7 @@ const ContactPageSection = () => {
       {
         icon: <FaWhatsapp size={20} className="text-defined-orange" />,
         text: "+91 9563 211411",
-        link: /iPhone|Android|iPad|iPod/i.test(navigator.userAgent)
+        link: /iPhone|Android|iPad|iPod/i.test(navigator?.userAgent)
           ? "https://wa.me/919563211411"
           : "https://web.whatsapp.com/send?phone=919563211411",
       },
